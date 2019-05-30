@@ -1,0 +1,17 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  e_body: MyText
+  j_body: MyText
+  e_caption: MyText
+  j_caption: MyText
+  e_speak: MyText
+  j_speak: MyText
+
+two:
+  e_body: MyText
+  j_body: MyText
+  e_caption: MyText
+  j_caption: MyText
+  e_speak: MyText
+  j_speak: MyText
