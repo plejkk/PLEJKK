@@ -1,22 +1,50 @@
 class JokesController < ApplicationController
   def new
+    @joke = Joke.new
   end
 
   def index
+    @jokes = Joke.all
   end
 
   def show
+    @joke = Joke.find(params[:id])
   end
 
   def edit
+    @joke = Joke.find(params[:id])
   end
 
   def create
-  end
+     joke = Joke.new(joke_params)
+    if joke.save
+      flash[:notice] = "Pick Up Linesを投稿いたしました。"
+    end
+    redirect_to jokes_path
 
-  def destroy
   end
 
   def update
+    joke = Joke.find(params[:id])
+    if joke.update(joke_params)
+      flash[:notice] = "投稿を更新しました。"
+    end
+    redirect_to jokes_path
   end
+
+  def destroy
+    joke = Joke.find(params[:id])
+    if joke.destroy
+      flash[:notice] = "投稿を削除いたしました。"
+    redirect_to jokes_path
+    end
+  end
+
+
 end
+  private
+
+  def joke_params
+    params.require(:joke).permit(:e_body, :j_body, :e_caption, :j_caption ,:e_speak, :j_speak)
+
+  end
