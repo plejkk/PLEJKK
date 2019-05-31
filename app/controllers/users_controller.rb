@@ -5,6 +5,9 @@ class UsersController < ApplicationController
   def show
   end
 
+  def favorites
+  end
+
   def edit
   end
 
