@@ -1,17 +1,30 @@
 <h1>Jokes#show</h1>
 <p>Find me in app/views/jokes/show.html.erb</p>
-				<p>英文のPick Up Lines</p>
-				<%= @joke.e_body %>
-				<p>和訳のPick Up Lines</p>
-				<%= @joke.j_body %>
-				<p>英文のPick Up Linesの説明</p>
-				<%= @joke.e_caption %>
-				<p>和文のPick Up Lines説明</p>
-				<%= @joke.j_caption %>
-				<p>ローマ字のPick Up Lines発音</p>
-				<%= @joke.e_speak %>
-				<p>カタカナのPick Up Lines発音</p>
-				<%= @joke.j_speak %>
+	<p>英文のPick Up Lines</p>
+	<%= @joke.e_body %>
+	<p>和訳のPick Up Lines</p>
+	<%= @joke.j_body %>
+	<p>英文のPick Up Linesの説明</p>
+	<%= @joke.e_caption %>
+	<p>和文のPick Up Lines説明</p>
+	<%= @joke.j_caption %>
+	<p>ローマ字のPick Up Lines発音</p>
+	<%= @joke.e_speak %>
+	<p>カタカナのPick Up Lines発音</p>
+	<%= @joke.j_speak %>
 
-				<%= link_to "投稿を編集する", edit_joke_path(@joke.id) %>
-				<%= link_to "商品を削除する", joke_path(@joke.id), method: :delete, "data-confirm"=> "こちらの投稿を本当に削除しますか?" %>
+	<%= link_to "投稿を編集する", edit_joke_path(@joke.id) %>
+	<%= link_to "投稿を削除する", joke_path(@joke.id), method: :delete, "data-confirm"=> "こちらの投稿を本当に削除しますか?" %>
+	<p></p>
+	<p>jokeに紐づいたコメントの表示</p>
+	<% @comments.each do |comment| %>
+	    <%= comment.body %>
+    <% end %>
+
+    <p></p>
+    <p>コメント投稿フォーム</p>
+    <!-- ここでコメントコントローラーのcreateアクションを実行させる -->
+    <%= form_for [@joke, @comment] do |f| %>
+        <%= f.text_area :body, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
+    <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+	<% end %>
