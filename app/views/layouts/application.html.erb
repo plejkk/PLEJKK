@@ -32,7 +32,7 @@
               <li><a href="#">メニューＣ</a></li>
               <li class="navbar-form navbar-left" role="search">
                 <%= form_tag(jokes_path, method: :get) do %>
-                 <%= text_field_tag :search ,"" , :class=> "form-control", :placeholder => "検索キーワード" %>
+                 <%= text_field_tag :search ,"" , :class=> "form-control", :placeholder => "KeyWord" %>
                  <%= submit_tag "GO", :class =>"btn btn-default", :name => nil %>
                 <% end %>
               </li>
