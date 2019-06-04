@@ -19,20 +19,29 @@
 			<p>カタカナのPick Up Lines発音</p>
 			<%= joke.j_speak %>
 			<%= link_to "Show", joke_path(joke.id) %>
-			<% if joke.favorited_by?(current_user) %>
-			  <li>
-			    <%= link_to joke_favorites_path(joke.id), method: :delete do %>
-			      <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
-			      <%= joke.favorite.count %> いいね
-			    <% end %>
-			  </li>
+			<% if user_signed_in? %>
+				<% if joke.favorited_by?(current_user) %>
+				  <li>
+				    <%= link_to joke_favorites_path(joke.id), method: :delete do %>
+				      <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+				      <%= joke.favorite.count %> いいね
+				    <% end %>
+				  </li>
+				<% else %>
+				  <li>
+				    <%= link_to joke_favorites_path(joke.id), method: :post do %>
+				      <i class="fa fa-heart-o" aria-hidden="true"></i>
+				      <%= joke.favorite.count %> いいね
+				    <% end %>
+				  </li>
+				<% end %>
 			<% else %>
-			  <li>
-			    <%= link_to joke_favorites_path(joke.id), method: :post do %>
-			      <i class="fa fa-heart-o" aria-hidden="true"></i>
-			      <%= joke.favorite.count %> いいね
-			    <% end %>
-			  </li>
+				<li>
+				    <%= link_to new_user_session_path do %>
+				      <i class="fa fa-heart-o" aria-hidden="true"></i>
+				      <%= joke.favorite.count %> いいね
+				    <% end %>
+				  </li>
 			<% end %>
         </div>
       </li>

@@ -4,14 +4,14 @@ class Joke < ApplicationRecord
 
 	def favorited_by?(user)
 		favorite.where(user_id: user.id).exists?
-  	end
+  end
 
-  	def self.search(search)
-      if search
-        Joke.where('e_body LIKE ? OR j_body LIKE ? OR e_caption LIKE ? OR j_caption LIKE ? OR e_speak LIKE ? OR j_speak LIKE ?',"%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
-      else
-        Joke.all
-      end
+	def self.search(search)
+    if search
+      Joke.where('e_body LIKE ? OR j_body LIKE ? OR e_caption LIKE ? OR j_caption LIKE ? OR e_speak LIKE ? OR j_speak LIKE ?',"%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%", "%#{search}%")
+    else
+      Joke.all
     end
+  end
 end
 
