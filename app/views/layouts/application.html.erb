@@ -27,18 +27,36 @@
           </div>
           <div class="collapse navbar-collapse" id="navbarEexample6">
             <ul class="nav navbar-nav">
-              <li><a href="#">メニューＡ</a></li>
-              <li class="active"><a href="#">メニューＢ</a></li>
-              <li><a href="#">メニューＣ</a></li>
               <li class="navbar-form navbar-left" role="search">
                 <%= form_tag(jokes_path, method: :get) do %>
                  <%= text_field_tag :search ,"" , :class=> "form-control", :placeholder => "KeyWord" %>
-                 <%= submit_tag "GO", :class =>"btn btn-default", :name => nil %>
-                 <button type="submit" class="btn btn-default">検索</button>
+                 <button type="submit" class="btn btn-default" name= nil>GO</button>
                 <% end %>
               </li>
+              <% if user_signed_in? %>
+                <!-- もしアドミン -->
+                <% if current_user.admin == true %>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><%= link_to " jokes/new", new_joke_path %></li>
+                    <li><%= link_to " user/index", users_path %></li>
+                    <li><%= link_to " user/show", user_path(current_user) %></li>
+                    <li><%= link_to " log_out", destroy_user_session_path, method: :delete %></li>
+                  </ul>
+                  <!-- 普通のユーザー -->
+                <% else %>
+                  <ul class="nav navbar-nav navbar-right">
+                    <li><%= link_to " user/show", user_path(current_user) %></li>
+                    <li><%= link_to " log_out", destroy_user_session_path, method: :delete %></li>
+                  </ul>
+                <% end %>
+              <% else %>
+                <!-- 通常状態 -->
+                <ul class="nav navbar-nav navbar-right">
+                  <li><%= link_to " sign_in", new_user_session_path %></li>
+                  <li><%= link_to " sign_up", new_user_registration_path  %></li>
+                </ul>
+              <% end %>
             </ul>
-            <p class="navbar-text">ようこそ <a href="#" class="navbar-link ">ゲスト</a> さん。</p>
           </div>
         </div>
       </nav>
@@ -46,4 +64,3 @@
     <%= yield %>
   </body>
 </html>
-
