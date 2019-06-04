@@ -3,6 +3,7 @@ class UsersController < ApplicationController
   end
 
   def show
+    @user = User.find(params[:id])
   end
 
   def edit
@@ -14,3 +15,8 @@ class UsersController < ApplicationController
   def destroy
   end
 end
+  private
+
+  def joke_params
+    params.require(:joke).permit(:e_body, :j_body, :e_caption, :j_caption ,:e_speak, :j_speak)
+  end
