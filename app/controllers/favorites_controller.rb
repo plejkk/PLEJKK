@@ -1,6 +1,6 @@
 class FavoritesController < ApplicationController
   def index
-  	@favorites = Favorite.all
+    @favorites = Favorite.all
   end
 
   def create
@@ -11,7 +11,6 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
-    binding.pry
     joke = Joke.find(params[:joke_id])
     favorite = current_user.favorites.find_by(joke_id: joke.id)
     favorite.destroy

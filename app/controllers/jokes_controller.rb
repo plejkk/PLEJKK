@@ -18,12 +18,11 @@ class JokesController < ApplicationController
   end
 
   def create
-     joke = Joke.new(joke_params)
+    joke = Joke.new(joke_params)
     if joke.save
       flash[:notice] = "Pick Up Linesを投稿いたしました。"
     end
     redirect_to jokes_path
-
   end
 
   def update
@@ -38,15 +37,12 @@ class JokesController < ApplicationController
     joke = Joke.find(params[:id])
     if joke.destroy
       flash[:notice] = "投稿を削除いたしました。"
-    redirect_to jokes_path
+      redirect_to jokes_path
     end
   end
-
-
 end
-  private
+private
 
-  def joke_params
-    params.require(:joke).permit(:e_body, :j_body, :e_caption, :j_caption ,:e_speak, :j_speak)
-
-  end
+def joke_params
+  params.require(:joke).permit(:e_body, :j_body, :e_caption, :j_caption, :e_speak, :j_speak)
+end
