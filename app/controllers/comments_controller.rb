@@ -1,5 +1,4 @@
 class CommentsController < ApplicationController
-
   def create
     joke = Joke.find(params[:joke_id])
     comment = Comment.new(joke_comment_params)
@@ -13,7 +12,7 @@ class CommentsController < ApplicationController
   end
 end
 
-  private
-  def  joke_comment_params
-  	params.require(:comment).permit(:user_id, :joke_id, :body)
-  end
+private
+def joke_comment_params
+  params.require(:comment).permit(:user_id, :joke_id, :body)
+end

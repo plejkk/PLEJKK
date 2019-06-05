@@ -15,8 +15,8 @@ class UsersController < ApplicationController
   def destroy
   end
 end
-  private
+private
 
-  def joke_params
-    params.require(:joke).permit(:e_body, :j_body, :e_caption, :j_caption ,:e_speak, :j_speak)
-  end
+def joke_params
+  params.require(:joke).permit(:e_body, :j_body, :e_caption, :j_caption, :e_speak, :j_speak)
+end
