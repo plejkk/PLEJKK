@@ -12,9 +12,10 @@
 	<%= @joke.e_speak %>
 	<p>カタカナのPick Up Lines発音</p>
 	<%= @joke.j_speak %>
-
-	<%= link_to "投稿を編集する", edit_joke_path(@joke.id) %>
-	<%= link_to "投稿を削除する", joke_path(@joke.id), method: :delete, "data-confirm"=> "こちらの投稿を本当に削除しますか?" %>
+	<% if current_user.admin == true %>
+		<%= link_to "投稿を編集する", edit_joke_path(@joke.id) %>
+		<%= link_to "投稿を削除する", joke_path(@joke.id), method: :delete, "data-confirm"=> "こちらの投稿を本当に削除しますか?" %>
+	<% end %>
 	<p></p>
 	<p>jokeに紐づいたコメントの表示</p>
 	<% @comments.each do |comment| %>

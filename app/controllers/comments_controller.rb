@@ -1,4 +1,5 @@
 class CommentsController < ApplicationController
+  before_action :authenticate_user!
   def create
     joke = Joke.find(params[:joke_id])
     comment = Comment.new(joke_comment_params)
@@ -11,8 +12,8 @@ class CommentsController < ApplicationController
   def destroy
   end
 end
-
 private
+
 def joke_comment_params
   params.require(:comment).permit(:user_id, :joke_id, :body)
 end
