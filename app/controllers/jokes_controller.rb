@@ -1,4 +1,6 @@
 class JokesController < ApplicationController
+  before_action :authenticate_user!, only:[:show, :new, :edit, :create, :destroy]
+  before_action :admin_check, only:[:new, :edit, :update, :create, :destroy]
   def new
     @joke = Joke.new
   end
@@ -20,7 +22,7 @@ class JokesController < ApplicationController
   def create
     joke = Joke.new(joke_params)
     if joke.save
-      flash[:notice] = "Pick Up Linesを投稿いたしました。"
+      flash[:notice] = "投稿しました。"
     end
     redirect_to jokes_path
   end
@@ -37,6 +39,12 @@ class JokesController < ApplicationController
     joke = Joke.find(params[:id])
     if joke.destroy
       flash[:notice] = "投稿を削除いたしました。"
+      redirect_to jokes_path
+    end
+  end
+
+  def admin_check
+    if current_user.admin == false
       redirect_to jokes_path
     end
   end

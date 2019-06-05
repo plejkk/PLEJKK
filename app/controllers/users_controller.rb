@@ -1,4 +1,6 @@
 class UsersController < ApplicationController
+  before_action :authenticate_user!
+  before_action :admin_check, only:[:index]
   def index
   end
 
@@ -13,6 +15,12 @@ class UsersController < ApplicationController
   end
 
   def destroy
+  end
+
+  def admin_check
+    if current_user.admin == false
+      redirect_to jokes_path
+    end
   end
 end
 private
