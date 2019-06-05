@@ -20,6 +20,9 @@
 	<p>jokeに紐づいたコメントの表示</p>
 	<% @comments.each do |comment| %>
 	    <%= comment.body %>
+	    <% if comment.user_id == current_user.id %>
+	    	<%= link_to "コメントを削除する", joke_comments_path(comment.joke.id), method: :delete, "data-confirm"=> "こちらのコメントを本当に削除しますか?" %>
+	    <% end %>
     <% end %>
 
     <p></p>
