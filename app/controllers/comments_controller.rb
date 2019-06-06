@@ -1,7 +1,6 @@
 class CommentsController < ApplicationController
   before_action :authenticate_user!
   def create
-    # binding.pry
     joke = Joke.find(params[:joke_id])
     comment = Comment.new(joke_comment_params)
     comment.joke_id = joke.id
@@ -11,13 +10,8 @@ class CommentsController < ApplicationController
   end
 
   def destroy
-    binding.pry
-    # joke_idは送られてきている。
-    # しかし、comment_idがnilになっている
-    # したがってcomment_idを特定して削除することができなくなっている。
     joke = Joke.find(params[:joke_id])
-    # comment = Comment.find(params[:comment_id])
-    comment = current_user.comments.find_by(comment_id: comment.id)
+    comment = joke.comment.find(params[:id])
     comment.destroy
     redirect_to joke_path(params[:joke_id])
   end
