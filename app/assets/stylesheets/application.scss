@@ -27,11 +27,50 @@ header{
   display: inline-block;
 }
 
+.actions{
+  text-align: center;
+}
+.header-layout{
+  width: 65%;
+}
+
+.navbar-brand{
+  font-size: 20px;
+}
+
+.navbar-nav{
+  float: right;
+}
+
+.alert{
+  margin: 0 auto;
+  text-align: center;
+  z-index: 5;
+  position: relative;
+  width: 100%;
+}
+
 main{
-  margin: 50px auto;
+  margin: 70px auto;
   width: 60%;
 }
 
+h1{
+  text-align: center;
+}
+
+.caption{
+  text-align: center;
+  padding: 30px;
+}
+
+.a {
+  font-weight: bold;
+}
+
+.question{
+  font-size: 18px;
+}
 /*faq wrapper*/
 .faq-wrapper {
   background-color: #e6ecf0;

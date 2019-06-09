@@ -1,22 +1,23 @@
-<h1>Jokes#index</h1>
-<p>Find me in app/views/jokes/index.html.erb</p>
+<h1> Funny and Cheesy Pick Up Lines! </h1>
+<p class="caption" >Our best funny and cheesy pick up lines for all your embarrassing needs! <br>Warning, please only use these pick up lines only if you are brave or stupid enough!
+</p>
 
 <div class="faq">
 	<% @jokes.each do |joke| %>
 	    <ul id="faq-list">
 		    <li class="faq-list-item">
-		        <h3 class="question"><%= joke.e_body %></h3>
+		        <p class="question"><%= joke.e_body %></p>
 		        <span>+</span>
 		        <div class="answer">
-		          	<p>和訳のPick Up Lines</p>
+		          	<p class="a">和訳のPick Up Lines</p>
 					<%= joke.j_body %>
-					<p>英文のPick Up Linesの説明</p>
+					<p class="a">英文のPick Up Linesの説明</p>
 					<%= joke.e_caption %>
-					<p>和文のPick Up Lines説明</p>
+					<p class="a">和文のPick Up Lines説明</p>
 					<%= joke.j_caption %>
-					<p>ローマ字のPick Up Lines発音</p>
+					<p class="a">ローマ字のPick Up Lines発音</p>
 					<%= joke.e_speak %>
-					<p>カタカナのPick Up Lines発音</p>
+					<p class="a">カタカナのPick Up Lines発音</p>
 					<%= joke.j_speak %>
 					<%= link_to "Show", joke_path(joke.id) %>
 					<% if user_signed_in? %>

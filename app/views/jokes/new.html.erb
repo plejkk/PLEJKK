@@ -1,18 +1,18 @@
-<h1>Jokes#new</h1>
-<p>Find me in app/views/jokes/new.html.erb</p>
+<h1>Jokes/new</h1>
+<h3 class="caption">・絶対ユーザー目線！！！</h3>
 
 <%= form_for (@joke) do |f| %>
-	<p>英文Pick Up Lines</p>
-    <%= f.text_area :e_body, rows:'5', class: "form-control",placeholder: "英語でPick Up Linesを入力してください" %>
-    <p>和訳Pick Up Lines</p>
-    <%= f.text_area :j_body, rows:'5', class: "form-control",placeholder: "和訳でPick Up Linesを入力してください" %>
+	<p>Pick Up Lines</p>
+    <%= f.text_field :e_body, rows:'5', class: "form-control",placeholder: "英語でPick Up Linesを入力してください" %>
+    <p>Pick Up Lines in Japanese</p>
+    <%= f.text_field :j_body, rows:'5', class: "form-control",placeholder: "和訳でPick Up Linesを入力してください" %>
     <p>英文Pick Up Linesの説明</p>
     <%= f.text_area :e_caption, rows:'5', class: "form-control",placeholder: "英語でPick Up Linesを入力してください" %>
-    <p>和文のPick Up Linesの説明</p>
-    <%= f.text_area :j_caption, rows:'5', class: "form-control",placeholder: "和文でPick Up Lines説明を入力してください" %>
-    <p>ローマ字ののPick Up Linesの発音</p>
-    <%= f.text_area :e_speak, rows:'5', class: "form-control",placeholder: "和文でPick Up Lines説明を入力してください" %>
+    <p>説明</p>
+    <%= f.text_area :j_caption, rows:'5', class: "form-control",placeholder: "日本語でPick Up Lines説明を入力してください" %>
+    <p>ローマ字のPick Up Linesの発音</p>
+    <%= f.text_field :e_speak, rows:'5', class: "form-control",placeholder: "Pick Up Lines in Japanese の発音を入力してください" %>
     <p>カタカナのPick Up Linesの発音</p>
-    <%= f.text_area :j_speak, rows:'5', class: "form-control",placeholder: "カタカナでPick Up Lines説明を入力してください" %>
+    <%= f.text_field :j_speak, rows:'5', class: "form-control",placeholder: "Pick Up Linesのカタカナ発音を入力してください" %>
     <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
 <%end%>
