@@ -3,48 +3,48 @@
 
 <div class="faq">
 	<% @jokes.each do |joke| %>
-    <ul id="faq-list">
-      <li class="faq-list-item">
-        <h3 class="question"><%= joke.e_body %></h3>
-        <span>+</span>
-        <div class="answer">
-          <p>和訳のPick Up Lines</p>
-			<%= joke.j_body %>
-			<p>英文のPick Up Linesの説明</p>
-			<%= joke.e_caption %>
-			<p>和文のPick Up Lines説明</p>
-			<%= joke.j_caption %>
-			<p>ローマ字のPick Up Lines発音</p>
-			<%= joke.e_speak %>
-			<p>カタカナのPick Up Lines発音</p>
-			<%= joke.j_speak %>
-			<%= link_to "Show", joke_path(joke.id) %>
-			<% if user_signed_in? %>
-				<% if joke.favorited_by?(current_user) %>
-				  <li>
-				    <%= link_to joke_favorites_path(joke.id), method: :delete do %>
-				      <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
-				      <%= joke.favorite.count %> いいね
-				    <% end %>
-				  </li>
-				<% else %>
-				  <li>
-				    <%= link_to joke_favorites_path(joke.id), method: :post do %>
-				      <i class="fa fa-heart-o" aria-hidden="true"></i>
-				      <%= joke.favorite.count %> いいね
-				    <% end %>
-				  </li>
-				<% end %>
-			<% else %>
-				<li>
-				    <%= link_to new_user_session_path do %>
-				      <i class="fa fa-heart-o" aria-hidden="true"></i>
-				      <%= joke.favorite.count %> いいね
-				    <% end %>
-				  </li>
-			<% end %>
-        </div>
-      </li>
-    </ul>
-<% end %>
+	    <ul id="faq-list">
+		    <li class="faq-list-item">
+		        <h3 class="question"><%= joke.e_body %></h3>
+		        <span>+</span>
+		        <div class="answer">
+		          	<p>和訳のPick Up Lines</p>
+					<%= joke.j_body %>
+					<p>英文のPick Up Linesの説明</p>
+					<%= joke.e_caption %>
+					<p>和文のPick Up Lines説明</p>
+					<%= joke.j_caption %>
+					<p>ローマ字のPick Up Lines発音</p>
+					<%= joke.e_speak %>
+					<p>カタカナのPick Up Lines発音</p>
+					<%= joke.j_speak %>
+					<%= link_to "Show", joke_path(joke.id) %>
+					<% if user_signed_in? %>
+						<% if joke.favorited_by?(current_user) %>
+						  <li>
+						    <%= link_to joke_favorites_path(joke.id), method: :delete do %>
+						      <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
+						      <%= joke.favorite.count %>
+						    <% end %>
+						  </li>
+						<% else %>
+						  <li>
+						    <%= link_to joke_favorites_path(joke.id), method: :post do %>
+						      <i class="fa fa-heart-o" aria-hidden="true"></i>
+						      <%= joke.favorite.count %>
+						    <% end %>
+						  </li>
+						<% end %>
+					<% else %>
+						<li>
+						    <%= link_to new_user_session_path do %>
+						      <i class="fa fa-heart-o" aria-hidden="true"></i>
+						      <%= joke.favorite.count %>
+						    <% end %>
+						  </li>
+					<% end %>
+		        </div>
+		    </li>
+	    </ul>
+	<% end %>
 </div>

@@ -23,6 +23,15 @@
   box-sizing: border-box;
 }
 
+header{
+  display: inline-block;
+}
+
+main{
+  margin: 50px auto;
+  width: 60%;
+}
+
 /*faq wrapper*/
 .faq-wrapper {
   background-color: #e6ecf0;
@@ -32,7 +41,7 @@
 }
 
 #faq-list {
-  width: 500px;
+  width: 100%;
   margin: 0 auto;
   padding: 0;
   list-style: none;
@@ -41,7 +50,7 @@
 /*アコーディオン追加 */
 .faq-list-item {
   margin:10px;
-  border-bottom:1px solid #ccc;
+  /*border-bottom:1px solid #ccc;*/
   position:relative;
   cursor:pointer;
   text-align: left;
@@ -66,32 +75,3 @@
   margin-bottom: 15px;
 }
 
-#form2{
-position:relative;
-max-width:300px;
-margin-bottom:20px;
-}
-
-#sbox2{
-height:50px;
-padding:0 10px;
-position:absolute;
-left:0;
-top:0;
-border-radius:2px;
-outline:0;
-background:#eee;
-}
-#sbtn2{
-height:50px;
-position:absolute;
-left:255px;/*アイコン左右の位置調整*/
-top:0;
-background:none;
-color:#666;
-border:none;
-font-size:20px;/*アイコンサイズ*/
-}
-#sbtn5:hover{
-color:#7fbfff;
-}
