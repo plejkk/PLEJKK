@@ -10,9 +10,13 @@ class UsersController < ApplicationController
   end
 
   def edit
+    @user = User.find(params[:id])
   end
 
   def update
+    user = User.find(params[:id])
+    user.update(user_params)
+    redirect_to user_path(user.id)
   end
 
   def destroy
@@ -26,6 +30,6 @@ class UsersController < ApplicationController
 end
 private
 
-def joke_params
-  params.require(:joke).permit(:e_body, :j_body, :e_caption, :j_caption, :e_speak, :j_speak)
+def user_params
+  params.require(:user).permit(:email)
 end
