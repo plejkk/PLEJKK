@@ -9,7 +9,7 @@
 		        <p class="question"><%= joke.e_body %></p>
 		        <span>+</span>
 		        <div class="answer">
-		          	<p class="a">和訳のPick Up Lines</p>
+		          	<p class="a">日本語</p>
 					<%= joke.j_body %>
 					<p class="a">英文のPick Up Linesの説明</p>
 					<%= joke.e_caption %>
@@ -20,11 +20,11 @@
 					<p class="a">カタカナのPick Up Lines発音</p>
 					<%= joke.j_speak %>
 					<%= link_to "Show", joke_path(joke.id) %>
-					<div id="likes_buttons_<%= joke.id %>">
-		            	<%= render partial: 'favorites/like', locals: { joke: joke} %>
-		          	</div>
 		        </div>
 		    </li>
+			<div id="likes_buttons_<%= joke.id %>">
+            	<%= render partial: 'favorites/like', locals: { joke: joke} %>
+          	</div>
 	    </ul>
 	<% end %>
 </div>
