@@ -1,24 +1,24 @@
 <% if user_signed_in? %>
 	<% if joke.favorited_by?(current_user) %>
-	  <li>
+	  <p>
 	    <%= link_to joke_favorites_path(joke.id), method: :delete, remote: true do %>
 	      <i class="fa fa-heart" aria-hidden="true" style="color: red;"></i>
 	      <%= joke.favorite.count %>
 	    <% end %>
-	  </li>
+	  </p>
 	<% else %>
-	  <li>
-	    <%= link_to joke_favorites_path(joke.id), method: :post, remote: true do %>
-	      <i class="fa fa-heart-o" aria-hidden="true"></i>
-	      <%= joke.favorite.count %>
-	    <% end %>
-	  </li>
+	  	<p>
+	    	<%= link_to joke_favorites_path(joke.id), method: :post, remote: true do %>
+	     	<i class="fa fa-heart-o" aria-hidden="true"></i>
+	    	<%= joke.favorite.count %>
+	    	<% end %>
+	  	</p>
 	<% end %>
 <% else %>
-	<li>
+	<p>
 	    <%= link_to new_user_session_path do %>
 	      <i class="fa fa-heart-o" aria-hidden="true"></i>
 	      <%= joke.favorite.count %>
-	    <% end %>
-	  </li>
+		<% end %>
+	</p>
 <% end %>
