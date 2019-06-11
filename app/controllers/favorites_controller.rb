@@ -8,8 +8,9 @@ class FavoritesController < ApplicationController
   end
 
   def destroy
+    @user = current_user
     @joke = Joke.find(params[:joke_id])
-    favorite = current_user.favorites.find_by(joke_id: @joke.id)
-    favorite.destroy
+    @favorite = current_user.favorites.find_by(joke_id: @joke.id)
+    @favorite.destroy
   end
 end
