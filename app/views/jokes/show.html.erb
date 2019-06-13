@@ -1,16 +1,16 @@
-<h1>Jokes#show</h1>
-	<p>英文のPick Up Lines</p>
-	<%= @joke.e_body %>
-	<p>和訳のPick Up Lines</p>
-	<%= @joke.j_body %>
-	<p>英文のPick Up Linesの説明</p>
-	<%= @joke.e_caption %>
-	<p>和文のPick Up Lines説明</p>
-	<%= @joke.j_caption %>
-	<p>ローマ字のPick Up Lines発音</p>
-	<%= @joke.e_speak %>
-	<p>カタカナのPick Up Lines発音</p>
-	<%= @joke.j_speak %>
+<h1><%= @joke.e_body %></h1>
+	<p class="a">Pick Up Lines</p>
+	<p class="b"><%= @joke.e_body %></p>
+	<p class="a">日本語訳</p>
+	<p class="b"><%= @joke.j_body %></p>
+	<p class="a">単語紹介</p>
+	<p class="b"><%= @joke.e_caption %></p>
+	<p class="a">Pick Up Lines説明</p>
+	<p class="b"><%= @joke.j_caption %></p>
+	<p class="a">保留</p>
+	<p class="b"><%= @joke.e_speak %></p>
+	<p class="a">＜初心者向け＞カタカナ発音</p>
+	<p class="b"><%= @joke.j_speak %></p>
 	<% if current_user.admin == true %>
 		<%= link_to "投稿を編集する", edit_joke_path(@joke.id) %>
 		<%= link_to "投稿を削除する", joke_path(@joke.id), method: :delete, "data-confirm"=> "こちらの投稿を本当に削除しますか?" %>

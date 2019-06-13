@@ -1,26 +1,35 @@
 <div id="a_buttons">
 	<% user.favorites.each do |favorite| %>
 	    <ul id="faq-list">
+		  	<div class= "likes_buttons_">
+				<li>
+		        	<%= render partial: 'users/a', locals: { favorite: favorite} %>
+				</li>
+			</div>
 		  	<li class="faq-list-item">
 		        <p class="question"><%= favorite.joke.e_body %></p>
 		        <span>+</span>
 		        <div class="answer">
 		            <p class="a" >和訳のPick Up Lines</p>
-					<%= favorite.joke.j_body %>
+					<p class="b"><%= favorite.joke.j_body %></p>
 					<p class="a" >英文のPick Up Linesの説明</p>
-					<%= favorite.joke.e_caption %>
+					<p class="b"><%= favorite.joke.e_caption %></p>
 					<p class="a" >和文のPick Up Lines説明</p>
-					<%= favorite.joke.j_caption %>
+					<p class="b"><%= favorite.joke.j_caption %></p>
 					<p class="a" >ローマ字のPick Up Lines発音</p>
-					<%= favorite.joke.e_speak %>
+					<p class="b"><%= favorite.joke.e_speak %></p>
 					<p class="a" >カタカナのPick Up Lines発音</p>
-					<%= favorite.joke.j_speak %>
-					<%= link_to "Show", joke_path(favorite.joke.id) %>
+					<p class="b"><%= favorite.joke.j_speak %></p>
+					<div class="detail">
+						<% if user_signed_in? %>
+							<% if current_user.admin == true %>
+								<%= link_to "投稿詳細", joke_path(joke.id) %>
+							<% end %>
+						<% else %>
+						<% end %>
+					</div>
 		        </div>
 		  	</li>
-			<li>
-	        	<%= render partial: 'users/a', locals: { favorite: favorite} %>
-			</li>
 		</ul>
 	<% end %>
 </div>

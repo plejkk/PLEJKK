@@ -38,9 +38,6 @@ header{
   font-size: 20px;
 }
 
-.navbar-nav{
-  float: right;
-}
 
 .alert{
   margin: 0 auto;
@@ -65,11 +62,26 @@ h1{
 }
 
 .a {
+  margin: 10px;
+  font-size: 13px;
+}
+.b {
   font-weight: bold;
+  margin: 10px;
+  font-size: 13px;
+}
+
+.detail{
+  float: right;
+}
+
+.likes_buttons_{
+  float: left;
+  margin-top: 4px;
 }
 
 .question{
-  font-size: 18px;
+  font-size: 20px;
 }
 /*faq wrapper*/
 .faq-wrapper {
@@ -88,15 +100,11 @@ h1{
 
 /*アコーディオン追加 */
 .faq-list-item {
-  margin:10px;
+  margin:40px;
   /*border-bottom:1px solid #ccc;*/
   position:relative;
   cursor:pointer;
   text-align: left;
-}
-
-.faq-list-item h3 {
-  font-size: 14px;
 }
 
 .faq-list-item span {

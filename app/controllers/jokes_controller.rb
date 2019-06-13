@@ -1,6 +1,6 @@
 class JokesController < ApplicationController
   before_action :authenticate_user!, only:[:show, :new, :edit, :create, :destroy]
-  before_action :admin_check, only:[:new, :edit, :update, :create, :destroy]
+  before_action :admin_check, only:[:new ,:show, :edit, :update, :create, :destroy]
   def new
     @joke = Joke.new
   end

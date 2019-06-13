@@ -5,26 +5,33 @@
 <div class="faq">
 	<% @jokes.each do |joke| %>
 	    <ul id="faq-list">
+			<div id="likes_buttons_<%= joke.id %>" class= "likes_buttons_">
+            	<%= render partial: 'favorites/like', locals: { joke: joke} %>
+          	</div>
 		    <li class="faq-list-item">
 		        <p class="question"><%= joke.e_body %></p>
 		        <span>+</span>
 		        <div class="answer">
-		          	<p class="a">日本語</p>
-					<%= joke.j_body %>
-					<p class="a">英文のPick Up Linesの説明</p>
-					<%= joke.e_caption %>
-					<p class="a">和文のPick Up Lines説明</p>
-					<%= joke.j_caption %>
-					<p class="a">ローマ字のPick Up Lines発音</p>
-					<%= joke.e_speak %>
-					<p class="a">カタカナのPick Up Lines発音</p>
-					<%= joke.j_speak %>
-					<%= link_to "Show", joke_path(joke.id) %>
+		          	<p class="a"><日本語訳></p>
+					<p class="b"><%= joke.j_body %></p>
+					<p class="a"><単語紹介></p>
+					<p class="b"><%= joke.e_caption %></p>
+					<p class="a"><説明></p>
+					<p class="b"><%= joke.j_caption %></p>
+					<p class="a"><保留></p>
+					<p class="b"><%= joke.e_speak %></p>
+					<p class="a">＜初心者向け＞カタカナ発音</p>
+					<p class="b"><%= joke.j_speak %></p>
+					<div class="detail">
+						<% if user_signed_in? %>
+							<% if current_user.admin == true %>
+								<%= link_to "投稿詳細", joke_path(joke.id) %>
+							<% end %>
+						<% else %>
+						<% end %>
+					</div>
 		        </div>
 		    </li>
-			<div id="likes_buttons_<%= joke.id %>">
-            	<%= render partial: 'favorites/like', locals: { joke: joke} %>
-          	</div>
 	    </ul>
 	<% end %>
 </div>
