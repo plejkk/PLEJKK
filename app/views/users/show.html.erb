@@ -1,9 +1,15 @@
+<div class="main-about">
+	<table>
+		<tr>
+			<th>ログイン中のユーザー</th>
+			<th><%= @user.email %></th>
+			<th><%= link_to "メールアドレスの変更はこちらへ", edit_user_path(current_user.id) %></th>
+		</tr>
+	</table>
+</div>
 <h1>Your Favorites</h1>
-<p class="caption">ユーザー情報</p>
-<%= @user.email %>
-<%= link_to 'Edit', edit_user_path(current_user.id) %>
 
-<p>お気に入り一覧</p>
 <div class="faq">
     <%= render partial: 'users/like', locals: { user: @user} %>
 </div>
+
