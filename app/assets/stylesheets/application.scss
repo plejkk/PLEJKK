@@ -38,6 +38,9 @@ header{
   font-size: 20px;
 }
 
+li{
+  list-style: none;
+}
 
 /*.alert{
   margin: 0 auto;
@@ -47,12 +50,13 @@ header{
   width: 100%;
 }*/
 
-header{
+/*header{
   height: 51px;
   width: 100%;
   margin-bottom: 0;
+  display: inline-block;
 }
-
+*/
 main{
   margin: 70px auto;
   width: 60%;
@@ -73,6 +77,8 @@ main{
   height: 51px;
   z-index: 5;
   position:absolute;
+  padding: 0;
+  margin: 0 auto;
 }
 
 h1{
@@ -174,7 +180,11 @@ table th{
   padding: 10px 0;
 }
 
+@media screen and (max-width: 1024px){
+  main{
+  margin: 70px auto;
+  width: 87%;
+}
 
-
-
+}
 
