@@ -21,26 +21,20 @@ class JokesController < ApplicationController
 
   def create
     joke = Joke.new(joke_params)
-    if joke.save
-      flash[:notice] = "投稿しました。"
-    end
-    redirect_to jokes_path
+    joke.save
+    redirect_to jokes_path, success: "新規投稿しました"
   end
 
   def update
     joke = Joke.find(params[:id])
-    if joke.update(joke_params)
-      flash[:notice] = "投稿を更新しました。"
-    end
-    redirect_to jokes_path
+    joke.update(joke_params)
+    redirect_to jokes_path, success: "投稿を更新しました"
   end
 
   def destroy
     joke = Joke.find(params[:id])
-    if joke.destroy
-      flash[:notice] = "投稿を削除いたしました。"
-      redirect_to jokes_path
-    end
+    joke.destroy
+    redirect_to jokes_path, success: "投稿を削除しました"
   end
 
   def admin_check

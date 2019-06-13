@@ -46,15 +46,15 @@
                   <!-- 普通のユーザー -->
                 <% else %>
                   <ul class="nav navbar-nav navbar-right">
-                    <li><%= link_to " user/show", user_path(current_user) %></li>
-                    <li><%= link_to " log_out", destroy_user_session_path, method: :delete %></li>
+                    <li><%= link_to "お気に入り", user_path(current_user) %></li>
+                    <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete %></li>
                   </ul>
                 <% end %>
               <% else %>
                 <!-- 通常状態 -->
                 <ul class="nav navbar-nav navbar-right">
-                  <li><%= link_to " sign_in", new_user_session_path %></li>
-                  <li><%= link_to " sign_up", new_user_registration_path  %></li>
+                  <li><%= link_to "ログイン", new_user_session_path %></li>
+                  <li><%= link_to "新規会員登録", new_user_registration_path %></li>
                 </ul>
               <% end %>
             </ul>
@@ -62,12 +62,14 @@
         </div>
       </nav>
     </header>
-    <main>
-      <% if flash[:notice] %>
-        <div class="alert alert-warning">
-          <%= flash[:notice] %>
+      <% flash.each do |key, value| %>
+        <div class="flash-message-box">
+          <% key = "info" if key == "notice" %>
+          <% key = "danger"  if key == "alert" %>
+          <%= content_tag :div, value, class: "alert alert-#{key}"%>
         </div>
       <% end %>
+    <main>
       <%= yield %>
     </main>
   </body>

@@ -17,7 +17,7 @@
 //= require bootstrap-sprockets
 //= require_tree .
 $(function() {
-  $('.alert').fadeOut(4000);
+  $('.flash-message-box').fadeOut(4000);
   // FAQのアコーディオン
   $('.faq-list-item').click(function() {
     var $answer = $(this).find('.answer');
