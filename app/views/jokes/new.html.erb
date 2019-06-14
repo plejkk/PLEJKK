@@ -1,5 +1,9 @@
-<h1>Jokes/new</h1>
+<h1>管理者Jokes投稿画面</h1>
 <h3 class="caption">・絶対ユーザー目線！！！</h3>
+
+<% if @joke.errors.any? %>
+   <h3 class="admin_error_messages" >エラーが発生しています。再度確認してください。</h3>
+<% end %>
 
 <%= form_for (@joke) do |f| %>
 	<p>Pick Up Lines</p>

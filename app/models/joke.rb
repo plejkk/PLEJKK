@@ -2,6 +2,13 @@ class Joke < ApplicationRecord
   has_many :favorite, dependent: :destroy
   has_many :comment, dependent: :destroy
 
+  validates :e_body, presence: true
+  validates :j_body, presence: true
+  validates :e_caption, presence: true
+  validates :j_caption, presence: true
+  validates :e_speak, presence: true
+  validates :j_speak, presence: true
+
   def favorited_by?(user)
     favorite.where(user_id: user.id).exists?
   end

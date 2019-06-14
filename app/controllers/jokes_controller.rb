@@ -6,7 +6,7 @@ class JokesController < ApplicationController
   end
 
   def index
-    @jokes = Joke.search(params[:search])
+    @jokes = Joke.search(params[:search]).order(id: "DESC")
   end
 
   def show
@@ -20,21 +20,30 @@ class JokesController < ApplicationController
   end
 
   def create
-    joke = Joke.new(joke_params)
-    joke.save
-    redirect_to jokes_path, success: "新規投稿しました"
+    @joke = Joke.new(joke_params)
+    if @joke.save
+      redirect_to jokes_path, success: "新規投稿しました"
+    else
+      render :new
+    end
   end
 
   def update
-    joke = Joke.find(params[:id])
-    joke.update(joke_params)
-    redirect_to jokes_path, success: "投稿を更新しました"
+    @joke = Joke.find(params[:id])
+    if @joke.update(joke_params)
+      redirect_to jokes_path, success: "投稿を更新しました"
+    else
+      render :edit
+    end
   end
 
   def destroy
-    joke = Joke.find(params[:id])
-    joke.destroy
-    redirect_to jokes_path, success: "投稿を削除しました"
+    @joke = Joke.find(params[:id])
+    if @joke.destroy
+      redirect_to jokes_path, success: "投稿を削除しました"
+    else
+      redirect_to joke_path(@joke.id)
+    end
   end
 
   def admin_check
