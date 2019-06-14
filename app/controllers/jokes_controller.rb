@@ -7,7 +7,7 @@ class JokesController < ApplicationController
   end
 
   def index
-    @jokes = Joke.search(params[:search]).order(id: "DESC").page(params[:page]).per(PER).reverse_order
+    @jokes = Joke.search(params[:search]).page(params[:page]).per(PER).reverse_order.order(id: "DESC")
   end
 
   def show
