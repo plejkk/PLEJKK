@@ -1,2 +1,36 @@
-<h1>Jokes#show</h1>
-<p>Find me in app/views/jokes/show.html.erb</p>
+<h1><%= @joke.e_body %></h1>
+<% if @joke.errors.any? %>
+   <h3 class="admin_error_messages" >エラーが発生しています。再度確認してください。</h3>
+<% end %>
+	<p class="a">Pick Up Lines</p>
+	<p class="b"><%= @joke.e_body %></p>
+	<p class="a">日本語訳</p>
+	<p class="b"><%= @joke.j_body %></p>
+	<p class="a">単語紹介</p>
+	<p class="b"><%= @joke.e_caption %></p>
+	<p class="a">Pick Up Lines説明</p>
+	<p class="b"><%= @joke.j_caption %></p>
+	<p class="a">保留</p>
+	<p class="b"><%= @joke.e_speak %></p>
+	<p class="a">＜初心者向け＞カタカナ発音</p>
+	<p class="b"><%= @joke.j_speak %></p>
+	<% if current_user.admin == true %>
+		<%= link_to "投稿を編集する", edit_joke_path(@joke.id) %>
+		<%= link_to "投稿を削除する", joke_path(@joke.id), method: :delete, "data-confirm"=> "こちらの投稿を本当に削除しますか?" %>
+	<% end %>
+	<p></p>
+	<p>jokeに紐づいたコメントの表示</p>
+	<% @comments.each do |comment| %>
+	    <p><%= comment.body %></p>
+	    <% if comment.user_id == current_user.id %>
+	    	<%= link_to "コメントを削除する", joke_comment_path(@joke.id, comment.id), method: :delete, "data-confirm"=> "こちらのコメントを本当に削除しますか?" %>
+	    <% end %>
+    <% end %>
+
+    <p></p>
+    <p>コメント投稿フォーム</p>
+    <!-- ここでコメントコントローラーのcreateアクションを実行させる -->
+    <%= form_for [@joke, @comment] do |f| %>
+        <%= f.text_area :body, rows:'5', class: "form-control",placeholder: "コメントをここに" %>
+    <%= f.submit "送信する", class: "btn btn-lg btn-base-1 mt-20 pull-right" %>
+	<% end %>

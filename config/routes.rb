@@ -1,11 +1,10 @@
 Rails.application.routes.draw do
-  get 'users/index'
-  get 'users/show'
-  get 'users/edit'
-  get 'jokes/new'
-  get 'jokes/index'
-  get 'jokes/show'
-  get 'jokes/edit'
   devise_for :users
+  root 'jokes#index'
+  resources :users, :only => [:index, :show, :edit, :update, :destroy]
+  resources :jokes do
+  	resource :favorites, only: [:create, :destroy]
+  	resources :comments, only: [:create, :destroy]
+  end
   # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
 end
