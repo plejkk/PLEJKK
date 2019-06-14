@@ -1,12 +1,13 @@
 class JokesController < ApplicationController
   before_action :authenticate_user!, only:[:show, :new, :edit, :create, :destroy]
   before_action :admin_check, only:[:new ,:show, :edit, :update, :create, :destroy]
+  PER = 25
   def new
     @joke = Joke.new
   end
 
   def index
-    @jokes = Joke.search(params[:search]).order(id: "DESC")
+    @jokes = Joke.search(params[:search]).order(id: "DESC").page(params[:page]).per(PER).reverse_order
   end
 
   def show
