@@ -1,4 +1,7 @@
 <h1><%= @joke.e_body %></h1>
+<% if @joke.errors.any? %>
+   <h3 class="admin_error_messages" >エラーが発生しています。再度確認してください。</h3>
+<% end %>
 	<p class="a">Pick Up Lines</p>
 	<p class="b"><%= @joke.e_body %></p>
 	<p class="a">日本語訳</p>

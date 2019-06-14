@@ -14,7 +14,7 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-default navbar-fixed-bottom">
+      <nav class="navbar navbar-default navbar-fixed-top">
         <div class="container-fluid header-layout">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample7">
@@ -40,18 +40,22 @@
                 <% if user_signed_in? %>
                     <!-- もしアドミン -->
                     <% if current_user.admin == true %>
-                        <li class="navbar-text navbar-right"><%= link_to " 新規投稿", new_joke_path, class: "navbar-link" %></li>
-                        <li class="navbar-text navbar-right"><%= link_to " ユーザー一覧", users_path, class: "navbar-link" %></li>
-                        <li class="navbar-text navbar-right"><%= link_to " お気に入り", user_path(current_user), class: "navbar-link" %></li>
-                        <li class="navbar-text navbar-right"><%= link_to " ログアウト", destroy_user_session_path, method: :delete, class: "navbar-link" %></li>
+                      <ul class="nav navbar-nav navbar-right">
+                        <li><%= link_to " 新規投稿", new_joke_path, class: "navbar-link" %></li>
+                        <li><%= link_to " ユーザー一覧", users_path, class: "navbar-link" %></li>
+                        <li><%= link_to " お気に入り", user_path(current_user), class: "navbar-link" %></li>
+                        <li><%= link_to " ログアウト", destroy_user_session_path, method: :delete, class: "navbar-link" %></li>
+                      </ul>
                     <!-- 普通のユーザー -->
                     <% else %>
-                        <li class="navbar-text"><%= link_to " お気に入り", user_path(current_user), class: "navbar-link"%></p>
-                        <li class="navbar-text navbar-right"><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "navbar-link" %></p>
+                      <ul class="nav navbar-nav navbar-right">
+                        <li><%= link_to " お気に入り", user_path(current_user), class: "navbar-link"%></li>
+                        <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "navbar-link" %></li>
+                      </ul>
                     <% end %>
                 <% else %>
                   <!-- 通常状態 -->
-                  <li class="navbar-text navbar-right">ようこそ <a href="/users/sign_in" class="navbar-link">ゲスト</a> さん。</p>
+                  <li class="navbar-text navbar-right">ようこそ <a href="/users/sign_in" class="navbar-link">ゲスト</a> さん。</li>
                 <% end %>
           </div>
         </div>

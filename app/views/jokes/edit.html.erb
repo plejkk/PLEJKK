@@ -1,5 +1,8 @@
 <h1>Jokes#edit</h1>
 <h3 class="caption">・絶対ユーザー目線！！！</h3>
+<% if @joke.errors.any? %>
+   <h3 class="admin_error_messages" >エラーが発生しています。再度確認してください。</h3>
+<% end %>
 
 <%= form_for (@joke) do |f| %>
 	<p>英文Pick Up Lines</p>
