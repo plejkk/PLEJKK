@@ -58,6 +58,12 @@ header{
   display: inline-block;
 }
 
+.navbar-brand{
+  font-family: 'Apple Symbols',sans-serif;
+  font-size: 35px;
+}
+
+
 main{
   margin: 70px auto;
   width: 60%;
@@ -113,6 +119,11 @@ h1{
 .question{
   font-size: 20px;
 }
+
+.faq{
+  padding: 30px;
+  border: 1px solid #ccc;
+}
 /*faq wrapper*/
 .faq-wrapper {
   background-color: #e6ecf0;
@@ -131,7 +142,7 @@ h1{
 /*アコーディオン追加 */
 .faq-list-item {
   margin:40px;
-  /*border-bottom:1px solid #ccc;*/
+  border-bottom:1px solid #ccc;
   position:relative;
   cursor:pointer;
   text-align: left;
