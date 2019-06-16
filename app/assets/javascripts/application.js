@@ -17,6 +17,8 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
+
+
 $(function() {
   $(document).on('click', '.sign_button', function() {
     $('.sign_modal_wrapper').show();
