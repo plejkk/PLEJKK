@@ -16,6 +16,25 @@
 //= require rails-ujs
 //= require bootstrap-sprockets
 //= require_tree .
+
+$(function() {
+  $(document).on('click', '.sign_button', function() {
+    $('.sign_modal_wrapper').show();
+    $('.sign_modal').show();
+    if ($(this).hasClass('sign_up_button')) {
+      $('.sign_up_modal').show();
+    } else {
+      $('.sign_in_modal').show();
+    }
+  });
+});
+
+$(document).on('click', '.sign_modal_wrapper, .fa_wrapper', function() {
+    $('.sign_modal_wrapper').hide();
+    $('.sign_modal').hide();
+    $('.sign_modal_content').hide();
+})
+
 $(function() {
   $('.flash-message-box').fadeOut(4000);
   // FAQのアコーディオン
