@@ -14,7 +14,7 @@
 
   <body>
     <header>
-      <nav class="navbar navbar-default navbar-fixed-top">
+      <nav class="navbar navbar-fixed-top">
         <div class="container-fluid header-layout">
           <div class="navbar-header">
             <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbarEexample7">
@@ -27,7 +27,6 @@
               Amazian
             </a>
           </div>
-          
           <div class="collapse navbar-collapse" id="navbarEexample7">
             <ul class="nav navbar-nav">
               <li class="navbar-form navbar-left" role="search">
@@ -38,7 +37,6 @@
               </li>
             </ul>
                 <% if user_signed_in? %>
-                    <!-- もしアドミン -->
                     <% if current_user.admin == true %>
                       <ul class="nav navbar-nav navbar-right">
                         <li><%= link_to " 新規投稿", new_joke_path, class: "navbar-link" %></li>
@@ -46,7 +44,6 @@
                         <li><%= link_to " お気に入り", user_path(current_user), class: "navbar-link" %></li>
                         <li><%= link_to " ログアウト", destroy_user_session_path, method: :delete, class: "navbar-link" %></li>
                       </ul>
-                    <!-- 普通のユーザー -->
                     <% else %>
                       <ul class="nav navbar-nav navbar-right">
                         <li><%= link_to " お気に入り", user_path(current_user), class: "navbar-link"%></li>
@@ -54,7 +51,6 @@
                       </ul>
                     <% end %>
                 <% else %>
-                  <!-- 通常状態 -->
                   <li class="navbar-text navbar-right">ようこそ <a href="/users/sign_in" class="navbar-link">ゲスト</a> さん。</li>
                 <% end %>
           </div>
