@@ -1,66 +1,71 @@
 <div class="home-top-first">
-  <div class="col-md-1"></div>
-  <div class="col-md-10"></div>
-  <h1>Home#top</h1>
-  <div class="for-user">
-    <div class="sign_button sign_up_button">
-    	会員登録
-    </div>
-    <div class="sign_button sign_in_button">
-    	ログイン
-    </div>
-  </div>
-  <div class="sign_modal_wrapper"></div>
-  <div class="sign_modal">
-    <span class="fa_wrapper"></span>
-    <div class="sign_up_modal sign_modal_content">
-      <h2>会員登録</h2>
-      <form class="new_user" action ="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="0vopqXSAxej0lk4KKOWG+YUcG2s5X+btIeQBKegvkob1KNqBEYUcJjZXNJ9bYJDpL+8AncJ0uHNFA4luEVFTAg==">
-        <div class="form-group">
-          <label for="user_email">メールアドレス</label><br>
-          <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" class="radius">
+  <div class="bg-image">
+    <div class="bg-mask">
+      <div class="for-user-header">
+        <p class="home-explanation">笑いながら、楽しく英語を、学ぼう</p>
+      </div>
+      <div class="for-user">
+          <div class="sign_button sign_up_button">
+          	はじめる
+          </div>
+          <div class="sign_button sign_in_button">
+          	ログイン
+          </div>
         </div>
+      </div>
+      <div class="sign_modal_wrapper"></div>
+      <div class="sign_modal">
+        <span class="fa_wrapper"></span>
+        <div class="sign_up_modal sign_modal_content">
+          <h2>会員登録</h2>
+          <form class="new_user" action ="/users" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="0vopqXSAxej0lk4KKOWG+YUcG2s5X+btIeQBKegvkob1KNqBEYUcJjZXNJ9bYJDpL+8AncJ0uHNFA4luEVFTAg==">
+            <div class="form-group">
+              <label for="user_email">メールアドレス</label><br>
+              <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" class="radius">
+            </div>
 
-        <div class="form-group">
-          <label for="user_password">パスワード</label>
-          <br>
-          <em class="password_confirm">(6桁以上で設定してください)</em>
-          <br>
-          <input autocomplete="new-password" type="password" name="user[password]" aria-autocomplete="list" class="radius">
-        </div>
+            <div class="form-group">
+              <label for="user_password">パスワード</label>
+              <br>
+              <em class="password_confirm">(6桁以上で設定してください)</em>
+              <br>
+              <input autocomplete="new-password" type="password" name="user[password]" aria-autocomplete="list" class="radius">
+            </div>
 
-        <div class="form-group">
-          <label for="user_password_confirmation">確認用パスワード</label><br>
-          <input autocomplete="new-password" type="password" name="user[password_confirmation]" class="radius">
-        </div>
+            <div class="form-group">
+              <label for="user_password_confirmation">確認用パスワード</label><br>
+              <input autocomplete="new-password" type="password" name="user[password_confirmation]" class="radius">
+            </div>
 
-        <div class="actions">
-          <input type="submit" name="commit" value="はじめる" data-disable-with="はじめる" class= "btn btn-default mt-20 btn-log">
+            <div class="actions">
+              <input type="submit" name="commit" value="はじめる" data-disable-with="はじめる" class= "btn btn-default mt-20 btn-log">
+            </div>
+          </form>
         </div>
-      </form>
-    </div>
-    <div class="sign_in_modal sign_modal_content">
-      <h2>ログイン</h2>
-      <form class="new_user" action ="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="oHLlAj0JDR0syLFJq8pvBZgP3Tf2VBOuOl5VCtX7PkCHoBYqWAzU0+4Jy9zYT3kVMvzGwQ1/TTBeud1NLIX/xA==">
-        <div class="form-group">
-          <label for="user_email">メールアドレス</label><br>
-          <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" class="radius">
-        </div>
+        <div class="sign_in_modal sign_modal_content">
+          <h2>ログイン</h2>
+          <form class="new_user" action ="/users/sign_in" accept-charset="UTF-8" method="post"><input name="utf8" type="hidden" value="✓"><input type="hidden" name="authenticity_token" value="oHLlAj0JDR0syLFJq8pvBZgP3Tf2VBOuOl5VCtX7PkCHoBYqWAzU0+4Jy9zYT3kVMvzGwQ1/TTBeud1NLIX/xA==">
+            <div class="form-group">
+              <label for="user_email">メールアドレス</label><br>
+              <input autofocus="autofocus" autocomplete="email" type="email" value="" name="user[email]" class="radius">
+            </div>
 
-        <div class="form-group">
-          <label for="user_password">パスワード</label><br>
-          <input autocomplete="current-password" type="password" name="user[password]" class="radius">
-        </div>
+            <div class="form-group">
+              <label for="user_password">パスワード</label><br>
+              <input autocomplete="current-password" type="password" name="user[password]" class="radius">
+            </div>
 
-        <div class="form-group">
-          <input name="user[remember_me]" type="hidden" value="0"><input type="checkbox" value="1" name="user[remember_me]" >
-          <label for="user_remember_me">Remember me</label>
-        </div>
+            <div class="form-group">
+              <input name="user[remember_me]" type="hidden" value="0"><input type="checkbox" value="1" name="user[remember_me]" >
+              <label for="user_remember_me">Remember me</label>
+            </div>
 
-        <div class="actions">
-          <input type="submit" name="commit" value="ログイン" data-disable-with="ログイン" class= "btn btn-default mt-20 btn-log">
+            <div class="actions">
+              <input type="submit" name="commit" value="ログイン" data-disable-with="ログイン" class= "btn btn-default mt-20 btn-log">
+            </div>
+          </form>
         </div>
-      </form>
+      </div>
     </div>
   </div>
 </div>

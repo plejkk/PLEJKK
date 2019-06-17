@@ -14,6 +14,7 @@
  *= require_self
  *= require font-awesome
  */
+
  @import "bootstrap-sprockets";
  @import "bootstrap";
 
@@ -23,14 +24,6 @@
   box-sizing: border-box;
 }
 
-
-header{
-  height: 51px;
-  width: 100%;
-  margin-bottom: 0;
-  display: inline-block;
-}
-
 .actions{
   margin: 10px 0;
 }
@@ -38,11 +31,51 @@ header{
 body{
   font-family: "Avenir Next", "Hiragino Sans", verdana, arial, helvetica, sans-serif;
 }
+/*Header部分*/
+.navbar-toggle {
+  border-color: white;
+}
 
-.for-user{
+.nav{
   text-align: center;
 }
-/*ボタン*/
+
+.navbar{
+  background-color: rgb(255, 163, 158);
+  border-color: white;
+  margin-bottom: 0;
+}
+
+.actions{
+  text-align: center;
+}
+
+.header-layout{
+  width: 65%;
+}
+
+.navbar-brand{
+  font-size: 35px;
+}
+
+.navbar .navbar-brand {
+  color: white;
+}
+
+.navbar-link{
+  color: white;
+}
+
+.navbar-text{
+  color: white;
+}
+
+/*Header部分*/
+
+li {
+  list-style: none;
+}
+
 .btn-log{
   border-radius: 4px;
 }
@@ -53,35 +86,71 @@ body{
   color: white;
   border: white;
 }
-/*ボタン*/
 
-.radius{
-  border-radius: 6px;
-  width: 60%;
-  height: 30px;
+
+/*Top Page*/
+.home-top-first{
+  height: 780px;
+  width: 100%;
 }
+
+.bg-image {
+  background-image: url('../img/laughing.jpg');
+  width: 100%;
+  height: 100%;
+  background-size: cover;
+}
+.bg-mask {
+  height: 100%;
+  background: rgba(255,255,255,0.4);
+}
+
+.for-user-header{
+  padding-top: 300px;
+  text-align: center;
+}
+
+.for-user-header p{
+  font-weight: 400;
+}
+
+.home-explanation{
+  padding-bottom: 30px;
+  font-size: 30px;
+}
+
+.for-user{
+  text-align: center;
+  padding: 100px;
+  display: none;
+}
+/*TopPage*/
 
 /*モーダル*/
-.sign_button {
-  display: inline-block;
-  cursor: pointer;
-  border: 1px solid grey;
-  padding: 5px;
-  opacity: .6;
-  transition: .3s;
-  border-radius: 5px;
-
-}
-
-.sign_button:hover{
-  border-radius: 4px;
-  background-color: rgb(255, 163, 158);
-  color: white;
-}
-
-
 .sign_up_button {
   margin-right: 30px;
+}
+
+.sign_button {
+  display: inline-block;
+  max-width: 180px;
+  text-align: center;
+  border: 2px solid white;
+  font-size: 18px;
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+  padding: 8px 16px;
+  border-radius: 25px;
+  transition: .4s;
+  /*margin-right: 60px;*/
+  background-color: rgb(255, 163, 158);
+}
+
+.sign_button:hover {
+  background-color: rgb(255, 103, 97);
+  border-color: rgb(255, 163, 158);
+  color: #FFF;
 }
 
 .sign_modal_wrapper {
@@ -121,51 +190,17 @@ body{
   cursor: pointer;
   margin: 3px 3px 0 0;
 }
+
+.radius{
+  border-radius: 6px;
+  width: 60%;
+  height: 30px;
+}
 /*モーダル*/
 
-.navbar-toggle {
-  border-color: white;
-}
 
-.nav{
-  text-align: center;
-}
-
-.navbar{
-  background-color: rgb(255, 163, 158);
-  border-color: white;
-}
-
-.actions{
-  text-align: center;
-}
-
-.header-layout{
-  width: 65%;
-}
-
-.navbar-brand{
-  font-size: 35px;
-}
-
-.navbar .navbar-brand {
-  color: white;
-}
-
-.navbar-link{
-  color: white;
-}
-
-.navbar-text{
-  color: white;
-}
-
-li {
-  list-style: none;
-}
-
-main{
-  margin: 70px auto 0px auto;
+.container{
+  margin: 120px auto 40px auto;
   width: 60%;
 }
 
@@ -190,6 +225,7 @@ main{
 
 h1{
   text-align: center;
+  margin-top: 0px;
 }
 
 .caption{
@@ -225,7 +261,7 @@ h1{
   padding: 30px;
   border: 1px solid #ccc;
 }
-/*faq wrapper*/
+
 .faq-wrapper {
   background-color: #e6ecf0;
   text-align: center;
@@ -298,16 +334,6 @@ table th{
   color: red;
 }
 
-@media screen and (max-width: 1024px){
-  main{
-  margin: 70px auto;
-  width: 87%;
-}
-}
-
-.home-top-first{
-  height: 700px;
-}
 
 .service-explanation{
   height: 650px;
@@ -347,3 +373,9 @@ footer{
   color: grey;
 }
 
+@media screen and (max-width: 1024px){
+  .container{
+  margin: 70px auto;
+  width: 90%;
+}
+}

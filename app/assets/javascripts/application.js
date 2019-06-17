@@ -17,8 +17,6 @@
 //= require bootstrap-sprockets
 //= require_tree .
 
-
-
 $(function() {
   $(document).on('click', '.sign_button', function() {
     $('.sign_modal_wrapper').show();
@@ -29,6 +27,7 @@ $(function() {
       $('.sign_in_modal').show();
     }
   });
+  $('.for-user').fadeIn(7000);
 });
 
 $(document).on('click', '.sign_modal_wrapper, .fa_wrapper', function() {
@@ -58,3 +57,9 @@ $(function() {
     }
   });
 });
+
+
+
+
+
+

@@ -1,17 +1,19 @@
-<h1 >ユーザー一覧</h1>
-<div class="table-responsive">
-	<table class="table table-striped" style="table-layout:fixed;">
-		<thead>
-			<tr>
-				<th>Email</th>
-			</tr>
-		</thead>
-		<% @users.each do |user| %>
-		<tbody>
-			<tr>
-				<td><%= link_to user.email, user_path(user.id) %></td>
-			</tr>
-		</tbody>
-		<% end %>
-	</table>
+<div class="container">
+	<h1 >ユーザー一覧</h1>
+	<div class="table-responsive">
+		<table class="table table-striped" style="table-layout:fixed;">
+			<thead>
+				<tr>
+					<th>Email</th>
+				</tr>
+			</thead>
+			<% @users.each do |user| %>
+			<tbody>
+				<tr>
+					<td><%= link_to user.email, user_path(user.id) %></td>
+				</tr>
+			</tbody>
+			<% end %>
+		</table>
+	</div>
 </div>
