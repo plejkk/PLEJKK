@@ -1,12 +1,6 @@
-<div class="main-about">
-	<table>
-		<tr>
-			<th>ログイン中のユーザー</th>
-			<th><%= @user.email %></th>
-			<th><%= link_to "メールアドレスの変更はこちらへ", edit_user_path(current_user.id) %></th>
-		</tr>
-	</table>
-</div>
+<h1> Your favorite Pick Up Lines! </h1>
+<p class="caption" >Our best funny and cheesy pick up lines for all your embarrassing needs! <br>Warning, please only use these pick up lines only if you are brave or stupid enough!
+</p>
 
 <div class="faq">
     <%= render partial: 'users/like', locals: { user: @user} %>
