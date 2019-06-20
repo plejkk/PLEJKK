@@ -6,9 +6,9 @@
 	<div class="faq">
 		<% @jokes.each do |joke| %>
 		    <ul id="faq-list">
-				<div id="likes_buttons_<%= joke.id %>" class= "likes_buttons_">
+				<!-- <div id="likes_buttons_<%= joke.id %>" class= "likes_buttons_">
 	            	<%= render partial: 'favorites/like', locals: { joke: joke} %>
-	          	</div>
+	          	</div> -->
 			    <li class="faq-list-item">
 			        <p class="question"><%= joke.e_body %></p>
 			        <span>+</span>
