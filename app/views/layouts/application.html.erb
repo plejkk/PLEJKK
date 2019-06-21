@@ -44,7 +44,7 @@
                     </ul>
                   <% else %>
                     <ul class="nav navbar-nav navbar-right">
-                      <li><%= link_to " お気に入り", user_path(current_user), class: "navbar-link"%></li>
+                      <!-- <li><%= link_to " お気に入り", user_path(current_user), class: "navbar-link"%></li> -->
                       <li><%= link_to "ログアウト", destroy_user_session_path, method: :delete, class: "navbar-link" %></li>
                     </ul>
                   <% end %>
