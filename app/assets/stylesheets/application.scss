@@ -90,7 +90,7 @@ li {
 
 /*Top Page*/
 .home-top-first{
-  height: 780px;
+  height: 800px;
   width: 100%;
 }
 
@@ -259,7 +259,8 @@ h1{
 
 .faq{
   padding: 30px;
-  border: 1px solid #ccc;
+  /*枠用ボーダー*/
+  /*border: 1px solid #ccc;*/
 }
 
 .faq-wrapper {
@@ -364,9 +365,9 @@ h2.service:before {
   text-align: center;
 }
 
-footer{
+/*footer{
   height: 60px;
-}
+}*/
 
 .copyright{
   text-align: center;
