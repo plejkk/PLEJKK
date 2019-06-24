@@ -1,6 +1,11 @@
 <div class="container">
 	<h1> Funny and Cheesy Pick Up Lines! </h1>
-	<p class="caption" >Our best funny and cheesy pick up lines for all your embarrassing needs! <br>Warning, please only use these pick up lines only if you are brave or stupid enough!
+	<p class="caption">
+		<span class="explanation_pickup_lines">Pick up lines</span> とは？
+		<br>笑えてドキッとする！英語での口説き文句です。
+		<br>遊び心が効いた英語の口説き文句をご紹介したいと思います。
+		<br>Our best funny and cheesy pick up lines for all your embarrassing needs!
+		<br>Warning, please only use these pick up lines only if you are brave or stupid enough!
 	</p>
 
 	<div class="faq">
@@ -10,19 +15,19 @@
 	            	<%= render partial: 'favorites/like', locals: { joke: joke} %>
 	          	</div> -->
 			    <li class="faq-list-item">
-			        <p class="question"><%= joke.e_body %></p>
+			        <p class="question">・ <%= joke.e_body %></p>
 			        <span>+</span>
 			        <div class="answer">
-			          	<p class="a"><日本語訳></p>
-						<p class="b"><%= joke.j_body %></p>
-						<p class="a"><単語紹介></p>
-						<p class="b"><%= joke.e_caption %></p>
-						<p class="a"><説明></p>
-						<p class="b"><%= joke.j_caption %></p>
-						<p class="a"><保留></p>
-						<p class="b"><%= joke.e_speak %></p>
+			          	<p class="a">< 日本語訳 - Transelate in Japanese - ></p>
+						<p class="b">&emsp; <%= joke.j_body %></p>
+						<p class="a">< 単語紹介 - Vocabulary - ></p>
+						<p class="b">&emsp; <%= joke.e_caption %></p>
+						<p class="a">< 説明 - Explanation - ></p>
+						<p class="b">&emsp; <%= joke.j_caption %></p>
+						<p class="a">< Pronounciation in Japanese ></p>
+						<p class="b">&emsp; <%= joke.e_speak %></p>
 						<p class="a">＜初心者向け＞カタカナ発音</p>
-						<p class="b"><%= joke.j_speak %></p>
+						<p class="b">&emsp; <%= joke.j_speak %></p>
 						<div class="detail">
 							<% if user_signed_in? %>
 								<% if current_user.admin == true %>

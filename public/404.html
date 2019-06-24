@@ -1,61 +1,67 @@
+
 <!DOCTYPE html>
 <html>
 <head>
   <title>The page you were looking for doesn't exist (404)</title>
   <meta name="viewport" content="width=device-width,initial-scale=1">
   <style>
-  *{
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
-  }
+    *{
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+    body{
+      text-align: center;
+        font-family: "Avenir Next", "Hiragino Sans", verdana, arial, helvetica, sans-serif;
+    }
+    header{
+      height: 51px;
+      background-color: rgb(255, 163, 158);
+      border-color: white;
+    }
+    .header-logo{
+      font-size: 35px;
+      text-align: center;
+      color: white;
+    }
+    .dialog{
+      margin: 150px;
+    }
+    a{
+      text-decoration:none;
+    }
 
-  .actions{
-    margin: 10px 0;
-  }
-
-  body{
-    font-family: "Avenir Next", "Hiragino Sans", verdana, arial, helvetica, sans-serif;
-  }
-  /*Header部分*/
-  .navbar-toggle {
-    border-color: white;
-  }
-
-  .nav{
-    text-align: center;
-  }
-
-  .navbar{
-    background-color: rgb(255, 163, 158);
-    border-color: white;
-    margin-bottom: 0;
-  }
-
-  .actions{
-    text-align: center;
-  }
-
-  .header-layout{
-    width: 65%;
-  }
-
-  .navbar-brand{
-    font-size: 35px;
-  }
-
-  .navbar .navbar-brand {
-    color: white;
-  }
-
-  .navbar-link{
-    color: white;
-  }
-
-  .navbar-text{
-    color: white;
-  }
-  /*Header部分*/
+    .btn-border {
+      display: inline-block;
+      max-width: 180px;
+      text-align: left;
+      background-color: white;
+      text-decoration:none;
+      color: black;
+      font-weight: bold;
+      font-size: 30px;
+      /*border: 2px solid black;*/
+      /*font-size: 16px;*/
+      /*color: #777777;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: .4s;*/
+    }
+    .btn-border:hover {
+      /*background-color: white;*/
+      border-color: #ffffff;
+      color: black;
+      border: 2px solid black;
+      font-size: 16px;
+      color: #777777;
+      text-decoration: none;
+      font-weight: bold;
+      padding: 8px 16px;
+      border-radius: 4px;
+      transition: .4s;
+    }
   </style>
 </head>
 
@@ -64,16 +70,17 @@
   <header>
     <a class="header-logo" href="/" >Amazian</a>
   </header>
-  <div class="container">
+  <div class="dialog">
     <div>
-      <h1>大変申し訳ございません
+      <h1>Oops.... I'm so sorry....
       <br>お探しのページは見つかりませんでした
       </h1>
-      <p class="caption">
+      <p>
       一時的にアクセスできない状態か、移動もしくは削除された可能性があります。</p>
     </div>
     <p>もう一度ホームから、やり直してください</p>
   </div>
       <a class="btn-border" href="/"> Home</a>
 </body>
+
 </html>
