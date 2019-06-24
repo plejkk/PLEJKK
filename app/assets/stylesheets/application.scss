@@ -228,20 +228,26 @@ h1{
   margin-top: 0px;
 }
 
+.explanation_pickup_lines{
+  font-size: 18px;
+}
+
 .caption{
   text-align: center;
   padding: 30px;
+  line-height: 2em;
+  /*font-weight: bold;*/
 }
 
 .a {
-  margin: 10px;
-  font-size: 13px;
+  margin-top: 30px;
+  font-size: 15px;
 }
 
 .b {
-  font-weight: bold;
-  margin: 10px;
-  font-size: 13px;
+  /*font-weight: bold;*/
+  margin-top: 15px;
+  font-size: 15px;
 }
 
 .detail{
@@ -255,6 +261,8 @@ h1{
 
 .question{
   font-size: 20px;
+  /*font-weight: bold;*/
+  background-color: #FFFAFA;
 }
 
 .faq{
@@ -299,6 +307,7 @@ h1{
   display: none;
   padding: 5px 0px;
   margin-bottom: 15px;
+  margin-left: 30px;
 }
 
 .main-about{

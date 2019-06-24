@@ -7,17 +7,17 @@
     <% end %>
 
     <%= form_for (@joke) do |f| %>
-    	<p>Pick Up Lines</p>
+    	<p class="a">Pick Up Lines</p>
         <%= f.text_field :e_body, rows:'5', class: "form-control",placeholder: "英語でPick Up Linesを入力してください" %>
-        <p>Pick Up Lines in Japanese</p>
-        <%= f.text_field :j_body, rows:'5', class: "form-control",placeholder: "和訳でPick Up Linesを入力してください" %>
-        <p>英文Pick Up Linesの説明</p>
-        <%= f.text_area :e_caption, rows:'5', class: "form-control",placeholder: "英語でPick Up Linesを入力してください" %>
-        <p>説明</p>
+        <p class="a">< 日本語訳 - Transelate in Japanese - ></p>
+        <%= f.text_field :j_body, rows:'5', class: "form-control",placeholder: "和訳を入力してください" %>
+        <p class="a">< 単語紹介 - Vocabulary - ></p>
+        <%= f.text_area :e_caption, rows:'5', class: "form-control",placeholder: "使用されている英単語の紹介を入力してください" %>
+        <p class="a">< 説明 - Explanation - ></p>
         <%= f.text_area :j_caption, rows:'5', class: "form-control",placeholder: "日本語でPick Up Lines説明を入力してください" %>
-        <p>ローマ字のPick Up Linesの発音</p>
-        <%= f.text_field :e_speak, rows:'5', class: "form-control",placeholder: "Pick Up Lines in Japanese の発音を入力してください" %>
-        <p>カタカナのPick Up Linesの発音</p>
+        <p class="a">< Pronounciation in Japanese ></p>
+        <%= f.text_field :e_speak, rows:'5', class: "form-control",placeholder: "ローマ字で、Pick Up Lines in Japanese の発音を入力してください" %>
+        <p class="a">＜初心者向け＞カタカナ発音</p>
         <%= f.text_field :j_speak, rows:'5', class: "form-control",placeholder: "Pick Up Linesのカタカナ発音を入力してください" %>
         <%= f.submit "送信する", class: "btn btn-default pull-right btn-log" %>
     <%end%>
