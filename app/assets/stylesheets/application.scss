@@ -24,6 +24,7 @@
   box-sizing: border-box;
 }
 
+
 .actions{
   margin: 10px 0;
 }
@@ -70,6 +71,10 @@ body{
   color: white;
 }
 
+.icon-bar{
+  background-color: white;
+}
+
 /*Header部分*/
 
 li {
@@ -77,10 +82,12 @@ li {
 }
 
 .btn-log{
+  margin-top: 15px;
   border-radius: 4px;
 }
 
 .btn-log:hover{
+  margin-top: 15px;
   border-radius: 4px;
   background-color: rgb(255, 163, 158);
   color: white;
@@ -143,7 +150,6 @@ li {
   padding: 8px 16px;
   border-radius: 25px;
   transition: .4s;
-  /*margin-right: 60px;*/
   background-color: rgb(255, 163, 158);
 }
 
@@ -303,11 +309,14 @@ h1{
 }
 
 .answer {
-  font-size: 12px;
   display: none;
   padding: 5px 0px;
   margin-bottom: 15px;
   margin-left: 30px;
+}
+
+.paginate{
+  text-align: center;
 }
 
 .main-about{
@@ -381,11 +390,48 @@ h2.service:before {
 .copyright{
   text-align: center;
   color: grey;
+  margin-top: 50px;
 }
 
 @media screen and (max-width: 1024px){
+  main{
+    width: 100%;
+  }
+
+  .header-layout{
+    width: 95%;
+  }
+
   .container{
-  margin: 70px auto;
-  width: 90%;
-}
+    width: 100%;
+    padding: 0;
+  }
+
+  .faq{
+    width: 100%;
+    margin: 0 auto;
+    padding: 0;
+  }
+
+  .answer {
+    margin: 0 auto;
+  }
+
+  .faq-list-item {
+    margin:25px;
+  }
+
+  .a {
+    font-size: 14px;
+  }
+
+  .b {
+    font-size: 13px;
+  }
+
+  .form{
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+
 }

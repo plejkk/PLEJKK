@@ -10,9 +10,10 @@
       padding: 0;
       box-sizing: border-box;
     }
+
     body{
       text-align: center;
-        font-family: "Avenir Next", "Hiragino Sans", verdana, arial, helvetica, sans-serif;
+      font-family: "Avenir Next", "Hiragino Sans", verdana, arial, helvetica, sans-serif;
     }
     header{
       height: 51px;
@@ -40,17 +41,9 @@
       color: black;
       font-weight: bold;
       font-size: 30px;
-      /*border: 2px solid black;*/
-      /*font-size: 16px;*/
-      /*color: #777777;
-      text-decoration: none;
-      font-weight: bold;
-      padding: 8px 16px;
-      border-radius: 4px;
-      transition: .4s;*/
+
     }
     .btn-border:hover {
-      /*background-color: white;*/
       border-color: #ffffff;
       color: black;
       border: 2px solid black;
@@ -61,6 +54,23 @@
       padding: 8px 16px;
       border-radius: 4px;
       transition: .4s;
+    }
+
+    .copyright{
+      text-align: center;
+      color: grey;
+      margin-top: 230px;
+    }
+
+    @media screen and (max-width: 1024px){
+      .dialog{
+        margin: 150px 10px;
+      }
+      .copyright{
+      text-align: center;
+      color: grey;
+      margin:90px 10px 0 10px;
+    }
     }
   </style>
 </head>
@@ -80,7 +90,9 @@
     </div>
     <p>もう一度ホームから、やり直してください</p>
   </div>
-      <a class="btn-border" href="/"> Home</a>
+  <a class="btn-border" href="/"> Home</a>
+  <footer>
+    <p class="copyright">@copy right 2019 Kenta Kasama Amazian, All rights reserved.</p>
+  </footer>
 </body>
-
 </html>
