@@ -113,7 +113,7 @@ li {
 }
 
 .for-user-header{
-  padding-top: 300px;
+  padding-top: 200px;
   text-align: center;
 }
 
@@ -123,7 +123,9 @@ li {
 
 .home-explanation{
   padding-bottom: 30px;
-  font-size: 30px;
+  font-size: 45px;
+  color: grey;
+  font-family: 'Hiragino Kaku Gothic ProN','ヒラギノ角ゴ ProN W3',sans-serif;
 }
 
 .for-user{
@@ -242,7 +244,6 @@ h1{
   text-align: center;
   padding: 30px;
   line-height: 2em;
-  /*font-weight: bold;*/
 }
 
 .a {
@@ -251,7 +252,6 @@ h1{
 }
 
 .b {
-  /*font-weight: bold;*/
   margin-top: 15px;
   font-size: 15px;
 }
@@ -267,7 +267,6 @@ h1{
 
 .question{
   font-size: 20px;
-  /*font-weight: bold;*/
   background-color: #FFFAFA;
 }
 
@@ -390,13 +389,37 @@ h2.service:before {
 .copyright{
   text-align: center;
   color: grey;
-  margin-top: 50px;
 }
+
+.br-sp { display:none; }
 
 @media screen and (max-width: 1024px){
   main{
     width: 100%;
   }
+
+  .br-sp {
+    display:block;
+  }
+
+  .bg-image {
+    background-size: cover;
+    background-position: 25% 70%;
+  }
+
+  .home-explanation{
+    width: 95%;
+    font-size: 40px;
+    display: inline-block;
+    text-align: center;
+    color: grey;
+  }
+
+  .for-user-header{
+    padding-top: 130px;
+    text-align: center;
+  }
+
   .navbar-nav{
     width: 100%;
     margin: 0 auto;
@@ -404,6 +427,7 @@ h2.service:before {
   .navbar-form{
     text-align: center;
   }
+
   .header-layout{
     width: 95%;
   }
@@ -412,6 +436,7 @@ h2.service:before {
     width: 100%;
     padding: 0;
   }
+
 
   .faq{
     width: 100%;
