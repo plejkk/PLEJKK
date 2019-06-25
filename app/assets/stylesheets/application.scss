@@ -397,7 +397,13 @@ h2.service:before {
   main{
     width: 100%;
   }
-
+  .navbar-nav{
+    width: 100%;
+    margin: 0 auto;
+  }
+  .navbar-form{
+    text-align: center;
+  }
   .header-layout{
     width: 95%;
   }
